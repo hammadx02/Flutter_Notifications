@@ -11,7 +11,7 @@ class FirebaseApi {
     await _firebaseMessaging.requestPermission();
 
     // fetch the FCM token for this device
-    final fCMToken = _firebaseMessaging.getToken();
+    final fCMToken = await _firebaseMessaging.getToken();
 
     // print the token (normally you will send this to your server)
     print('Token: $fCMToken');
