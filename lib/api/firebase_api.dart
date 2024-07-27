@@ -29,5 +29,12 @@ class FirebaseApi {
     );
   }
 
-// function to initialized foreground and background settings
+// function to initialized background settings
+  Future initPushNotifications() async {
+    // handle the notifications if the app was terminated and now opened
+    FirebaseMessaging.instance.getInitialMessage().then(handleMessage);
+
+    // attach event listeners for when a notification opens the app
+    FirebaseMessaging.onMessageOpenedApp.listen(handleMessage);
+  }
 }
