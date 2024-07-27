@@ -10,9 +10,10 @@ Future<void> initNotifications() async {
   await _firebaseMessaging.requestPermission();
 
   // fetch the FCM token for this device
-  final FCMToken = _firebaseMessaging.getToken();
+  final fCMToken = _firebaseMessaging.getToken();
 
   // print the token (normally you will send this to your server)
+  print('Token: $fCMToken');
 
 }
 
