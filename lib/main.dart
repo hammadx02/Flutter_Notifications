@@ -2,6 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_notifications/api/firebase_api.dart';
 import 'package:flutter_notifications/screens/home_screen.dart';
+import 'package:flutter_notifications/screens/notifications_screen.dart';
+
+final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +27,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const HomeScreen(),
+      navigatorKey: navigatorKey,
+      routes: {
+        '/notification_screen': (context) => const NotificationsScreen(),
+      },
     );
   }
 }
