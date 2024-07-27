@@ -8,7 +8,14 @@ final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: 'AIzaSyBg96Xwy5GwjHcmCdtnKAHZnPhbBf-yLSQ',
+      appId: '1:64268624565:android:fd141fdc9451c46cb4d4fc',
+      messagingSenderId: '64268624565',
+      projectId: 'push-notifications-a76c4',
+    ),
+  );
   await FirebaseApi().initNotifications();
   runApp(const MyApp());
 }
